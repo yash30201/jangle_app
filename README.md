@@ -1,16 +1,75 @@
-# jangle_app
+# Jangle
 
-A new Flutter project.
+Front end mobile client for Jangle cross-platform chat application built with Flutter and socket.io
 
-## Getting Started
+To view, visit the application bundle and install at your device 
 
-This project is a starting point for a Flutter application.
+[![Codemagic build status](https://api.codemagic.io/apps/6114cfef2ca707a421efbc7f/6114cfef2ca707a421efbc7e/status_badge.svg)](https://codemagic.io/apps/6114cfef2ca707a421efbc7f/6114cfef2ca707a421efbc7e/latest_build)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Table of contents
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
++ [Built with](#build-with)
++ [Installation](#installation)
++ [App preview](#App-preview)
++ [To do's](#Todos)
+
+## Built with
+
+[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/)
+[![Flutter](https://img.shields.io/badge/Provider-%23EEEEEE.svg?style=for-the-badge)](https://pub.dev/packages/provider)
+
+## Installation
+
+Follow these simple steps to run project locally:
+
++ Change the backend server's endpoint url in file `lib/services/socketio.dart` and `lib/services/httpRequests.dart` to your backend server's url.
+    + In socketio.dart
+    ```dart
+    ...
+    import 'package:socket_io_client/socket_io_client.dart' as IO;
+
+    final String baseSocketServerUrl = ''; // <======= Here, put your backend server url
+
+    class SocketIo {
+    ...
+    ```
+
+    
+    + In httpRequests.dart
+
+    ```dart
+    ...
+    class HttpRequests {
+    String baseURL = ''; // <======= Here, put your backend server url
+
+    ...
+    ```
+
+
++ Install all the dependencies by running
+    ```
+    flutter pub get
+    ```
+<br>
+
+## App preview
+
+<img src="https://user-images.githubusercontent.com/54198301/130488541-b913e7a0-f112-4edc-b5b9-b6d124003ca5.gif" alt="Jangle-app" height="540" width="270" />
+
+## Todos
+
++ When creating/selecting chat from new conversation page, the home screen doesn't gets updated, either for addition or for selection.
++ Upgrading UI and animations
++ Adding personal info part and ability to edit firstName and lastName.
++ Implementing search functionality.
++ Implementing paging of chat messages
++ Implementing chat user's details page.
++ Implementing read-messages
++ Implementing last seen / online
++ Implementing message sending time.
++ Implementing message deletion if the message is sent my current user.
+
+
+
+
